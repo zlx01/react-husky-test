@@ -1,3 +1,34 @@
+# husky lint-staged prettier
+
+```bash
+npm install -D husky lint-staged prettier
+
+npx husky install
+npm pkg set scripts.prepare="husky install"
+npx husky add .husky/pre-commit "npx lint-staged"
+git add .husky/pre-commit
+```
+
+`package.json`
+
+```json
+{
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write"
+    ]
+  }
+}
+```
+
+最终效果是在提交之前执行以下命令
+
+```bash
+npx prettier --write "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}"
+```
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

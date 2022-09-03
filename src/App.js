@@ -1,5 +1,7 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+// 这里经过prettier格式化后会变双引号
+import { Foo } from "./Foo";
 
 function App() {
   return (
@@ -18,6 +20,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <Foo></Foo>
     </div>
   );
 }
